@@ -1,0 +1,1 @@
+0|30|top|( hyprland/workspaces hyprland/window ) ( clock ) ( cpu memory battery pulseaudio tray )

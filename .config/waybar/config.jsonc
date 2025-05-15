@@ -1,0 +1,68 @@
+/*
+  Simplified Waybar Configuration
+  - Position: Top
+  - Modules: Workspaces, Window, CPU, Memory, Battery, Network, Volume, Clock, Tray, Power
+*/
+
+{
+  "layer": "top",
+  "position": "top",
+  "height": 40,
+  "spacing": 5,
+  "modules-left": ["hyprland/workspaces", "hyprland/window"],
+  "modules-center": ["clock"],
+  "modules-right": ["cpu", "memory", "battery", "network", "pulseaudio", "tray", "custom/power", "custom/cliphist"],
+
+  "clock": {
+    "format": "{:%H:%M:%S}",
+    "tooltip-format": "{:%A, %B %d, %Y}",
+    "interval": 1
+  },
+
+  "cpu": {
+    "format": " {usage}%",
+    "interval": 5
+  },
+
+  "memory": {
+    "format": " {used} GiB",
+    "interval": 5
+  },
+
+  "battery": {
+    "format": " {capacity}%",
+    "interval": 10,
+    "tooltip": true
+  },
+
+  "network": {
+    "format": " {ipaddr}",
+    "interval": 5,
+    "tooltip-format": "Network: {essid} - {signalStrength}%"
+  },
+
+  "pulseaudio": {
+    "format": " {volume}%",
+    "tooltip-format": "Volume: {volume}%",
+    "on-click": "pavucontrol",
+    "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
+    "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%"
+  },
+
+  "tray": {
+    "icon-size": 18,
+    "spacing": 5
+  },
+
+  "custom/power": {
+    "format": "",
+    "on-click": "systemctl poweroff",
+    "tooltip": "Shutdown"
+  },
+
+  "custom/cliphist": {
+    "format": "",
+    "on-click": "cliphist list | rofi -dmenu | xclip -selection clipboard",
+    "tooltip": "Clipboard History"
+  }
+}
