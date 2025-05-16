@@ -66,7 +66,7 @@ listview {
     margin: 0px 0px 0px 20px;
     columns: 1;
     background-color: @background;
-    fixed-height: false;
+    fixed-height: true;
     lines: 7;
     border-radius: 0px;
     font: @font;
