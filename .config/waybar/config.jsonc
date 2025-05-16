@@ -36,7 +36,7 @@
     "custom/keybinds": {
         "format": "{icon} KB",
         "format-icons": ["󰘳"],
-        "on-click": "bash ~/Documents/themes/keybinds/keybinds.sh"
+        "on-click": "bash ~/dotfiles/.config/misc/keybinds/keybinds.sh"
     },
 
     "backlight": {
@@ -45,7 +45,7 @@
         "format-icons": ["", ""]
     },
     "battery": {
-        "bat": "BAT0",
+        "bat": "BAT1",
         "interval": 60,
         "states": {
             "warning": 30,
@@ -87,10 +87,10 @@
             }
         ]
     },
-    "hyprland/language": {
-        "format": "  {1}",
-        "tooltip": false,
-    },
+    // "hyprland/language": {
+    //     "format": "  {1}",
+    //     "tooltip": false,
+    // },
     "cpu": {
         "interval": 15,
         "format": "  {}%",
