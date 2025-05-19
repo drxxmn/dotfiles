@@ -37,3 +37,4 @@
  Move window to workspace 8     Ctrl + Shift + 3
  Move window to workspace 9     Ctrl + Shift + 4
  Move window to workspace 10    Ctrl + Shift + 5
+ HyprPicker                     Super + Shift + P
