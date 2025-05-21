@@ -1,8 +1,8 @@
 {
 	"layer": "top",
-	"modules-left": ["custom/launcher","cpu","memory","disk","hyprland/workspaces"],
+	"modules-left": ["custom/launcher","custom/keybinds","cpu","memory","disk","hyprland/workspaces"],
 	"modules-center": ["clock"],
-	"modules-right": ["custom/keybinds","tray","cava","hyprland/language","backlight","pulseaudio","battery","custom/power"],
+	"modules-right": ["cava","hyprland/language","backlight","pulseaudio","battery","tray","custom/power"],
 	
 	"pulseaudio": {
 		"tooltip": false,
@@ -134,14 +134,28 @@
         "format": "{icon}",
         "tooltip": false,
         "format-icons": {
-            "1": "",
-            "2": "",
+            "1": "",
+            "2": "",
             "3": "",
             "4": "",
             "5": "",
-            "urgent": "",
+            "urgent": "",
             "active": "",
-            "default": ""
+            "default": ""
     },
+    "network": {
+        "tooltip": true,
+        "interface": "wlp3s0,enp0s31f6",  
+        "format-wifi": " {ifname}: {ipaddr}/{cidr}",
+        "rotate": 0,
+        "format-ethernet": "󰈀 {ifname}: {ipaddr}/{cidr}",
+        "tooltip-format": "Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}/{cidr}</b>\nGateway: <b>{gwaddr}</b>\nNetmask: <b>{netmask}</b>",
+        "format-linked": "󰈀 {ifname} (No IP)",
+        "format-disconnected": "󰖪 ",
+        "tooltip-format-disconnected": "Disconnected",
+        "format-alt": "<span foreground='#99ffdd'> {bandwidthDownBytes}</span> <span foreground='#ffcc66'> {bandwidthUpBytes}</span>",
+        "interval": 2
+    },
+
     },
 }
