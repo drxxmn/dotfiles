@@ -1,0 +1,28 @@
+.bar-workspaces {
+  padding: 16px 0;
+
+  .workspace-btn {
+    all: unset;
+    min-width: 14px;
+    min-height: 32px; // now the default height
+    border-radius: 999px;
+    background-color: #C6C3AF;
+    margin: 1px 0;
+    opacity: 0.5;
+    transition:
+      background-color 200ms ease,
+      min-height 200ms ease,
+      opacity 200ms ease;
+  }
+
+  .workspace-btn:hover {
+    background-color: #6c7086;
+    opacity: 0.75;
+  }
+
+  .workspace-btn.active {
+    min-height: 52px; // grows when active
+    background-color: #8977B1;
+    opacity: 1;
+  }
+}

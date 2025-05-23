@@ -89,4 +89,6 @@ sudo pacman -S fastfetch imagemagick w3m
 
     Paru: An AUR helper, streamlining the process of installing and managing AUR packages.
 
-    Thunar: File manager.
+    Thunar: File man
+
+    HyprPicker: Fun tool to color pick colors on your screen.

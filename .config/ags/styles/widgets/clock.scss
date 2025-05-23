@@ -1,0 +1,22 @@
+.bar-clock {
+  background: transparent;
+  border: none;
+  padding: 4px;
+  color: #cdd6f4;
+  min-width: 28px;
+}
+
+.bar-clock-hour,
+.bar-clock-minute {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.bar-clock-minute {
+  margin-top: 2px; // Safe manual spacing
+}
+.widget-box.widget-clock {
+  padding: 1px 1px; // Much tighter
+  margin: 0;
+}
+
