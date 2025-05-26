@@ -13,6 +13,8 @@ element-text, element-icon, mode-switcher {
 
 window {
     border: 3px;
+//   width: 600px;
+//    height: 340px;          // Optional: tweak to match 7 lines
     border-color: transparent;
     background-color: @background;
     border-radius: 20px;
