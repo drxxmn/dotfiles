@@ -5,9 +5,7 @@ import { exec } from "astal";
 import Workspaces from "../../widgets/Workspaces";
 import Battery from "../../widgets/Battery";
 import { Clock } from "../../widgets/Clock";
-
-import SideBar from "./sidebar/SideBar";
-import { revealSideBar, sideBarShown } from "./sidebar/vars";
+import { sideBarShown, showContentWindow } from "./sidebar/vars";
 
 function Divider() {
   return <box className="divider" />;
@@ -26,11 +24,11 @@ function StartSection() {
         className="sidebar_button"
         cursor="pointer"
         onClick={() => {
-          if (!revealSideBar.get()) {
+          if (!showContentWindow.get()) {
             sideBarShown.set("home");
-            revealSideBar.set(true);
+            showContentWindow.set(true);
           } else if (sideBarShown.get() === "home") {
-            revealSideBar.set(false);
+            showContentWindow.set(false);
           } else {
             sideBarShown.set("home");
           }
@@ -49,17 +47,17 @@ function StartSection() {
         }
         cursor="pointer"
         onClick={() => {
-          if (!revealSideBar.get()) {
+          if (!showContentWindow.get()) {
             sideBarShown.set("appLauncher");
-            revealSideBar.set(true);
+            showContentWindow.set(true);
           } else if (sideBarShown.get() === "appLauncher") {
-            revealSideBar.set(false);
+            showContentWindow.set(false);
           } else {
             sideBarShown.set("appLauncher");
           }
         }}
       >
-        <label label="" />
+        <label label="" />
       </button>
     </box>
   );
@@ -109,17 +107,11 @@ export default function Bar(gdkmonitor: Gdk.Monitor) {
       }
       css="margin: 8px;"
     >
-      <box spacing={0}>
-        {/* Sidebar rendered first, with fixed width */}
-        <SideBar />
-
-        {/* Main bar content */}
         <centerbox className="sections" vertical={true} spacing={16}>
           <StartSection />
           <CenterSection monitor={gdkmonitor} />
           <EndSection />
         </centerbox>
-      </box>
     </window>
   );
 }

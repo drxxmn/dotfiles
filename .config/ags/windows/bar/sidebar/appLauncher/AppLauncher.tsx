@@ -3,7 +3,7 @@ import { Gtk } from 'astal/gtk3';
 import { Variable } from 'astal';
 
 import {
-  revealSideBar,
+  showContentWindow,
   sideBarShown
 } from '../vars';
 
@@ -17,7 +17,7 @@ const query = Variable('');
 const queriedApps = Variable<AppsService.Application[]>(apps.fuzzy_query(query.get()));
 const selectedApp = Variable<AppsService.Application>(queriedApps.get()[0]);
 
-revealSideBar.subscribe((value) => {
+showContentWindow.subscribe((value) => {
   if (!value) {
     query.set('');
     queriedApps.set(apps.fuzzy_query(query.get()));
@@ -26,7 +26,7 @@ revealSideBar.subscribe((value) => {
 });
 
 function launchApp(app: AppsService.Application) {
-  revealSideBar.set(false);
+  showContentWindow.set(false);
   sideBarShown.set('home');
   app.launch();
 }
